@@ -541,7 +541,7 @@ double alignerToolWithObjects( const DictionaryItems& dictionary,
             os << huSentenceListPretty[j].words;
 
             if (j+1<nexthuPos)
-              os << " ~~~ ";
+              os << " ";
         }
 
         os << "\t" ;
@@ -551,7 +551,7 @@ double alignerToolWithObjects( const DictionaryItems& dictionary,
           os << enSentenceList[j].words;
           if (j+1<nextenPos)
           {
-            os << " ~~~ ";
+            os << " ";
           }
         }
       }

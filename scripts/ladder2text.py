@@ -35,19 +35,19 @@ def main() :
 		ladder = map( parseLadderLine, ladderlines )
 
 		# the next map() does all the work, so here are some comments...
-		# the map() iterates over the holes of the ladder. 
+		# the map() iterates over the holes of the ladder.
 		# a hole is supposed to be two consecutive items in the array holding the lines of the ladder. /an array of holes is returned by pairwise(ladder)/
 		# the following segment returns an interval of sentences corresponding to a hole:
 		# hulines[int(hole[0][0]):int(hole[1][0])]
 		outputlines = map( lambda hole:
 		    hole[0][2] + "\t" +
-		    " ~~~ ".join(hulines[int(hole[0][0]):int(hole[1][0])]) 
-		    + "\t" + 
-		    " ~~~ ".join(enlines[int(hole[0][1]):int(hole[1][1])])
+		    " ".join(hulines[int(hole[0][0]):int(hole[1][0])])
+		    + "\t" +
+		    " ".join(enlines[int(hole[0][1]):int(hole[1][1])])
 		,
 		    pairwise(ladder)
 		)
-		
+
 		for l in outputlines :
 		    print l
 	else:
